@@ -67,7 +67,7 @@ fun App() {
                     }
                     item(key = "#input") {
                         Card(
-                            modifier = Modifier.fillMaxWidth(0.8f).fillParentMaxHeight(0.4f),
+                            modifier = Modifier.fillMaxWidth(0.8f).fillParentMaxHeight(if (screenInfo.type == ScreenType.DESKTOP) 0.4f else 0.2f),
                             colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface)
                         ) {
                             Box(
@@ -143,7 +143,7 @@ fun App() {
                                 }
                             else {
                                 Card(
-                                    modifier = Modifier.weight(1f).fillParentMaxHeight(0.4f),
+                                    modifier = Modifier.weight(1f).fillParentMaxHeight(if (screenInfo.type == ScreenType.DESKTOP) 0.4f else 0.2f),
                                     colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface)
                                 ) {
                                     Column(
@@ -171,7 +171,7 @@ fun App() {
 
 
                                 Card(
-                                    modifier = Modifier.weight(1f).fillParentMaxHeight(0.4f),
+                                    modifier = Modifier.weight(1f).fillParentMaxHeight(if (screenInfo.type == ScreenType.DESKTOP) 0.4f else 0.2f),
                                     colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface)
                                 ) {
                                     Column(
@@ -195,7 +195,7 @@ fun App() {
 
 
                                 Card(
-                                    modifier = Modifier.weight(1f).fillParentMaxHeight(0.4f),
+                                    modifier = Modifier.weight(1f).fillParentMaxHeight(if (screenInfo.type == ScreenType.DESKTOP) 0.4f else 0.2f),
                                     colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface)
                                 ) {
                                     Column(
@@ -223,7 +223,8 @@ fun App() {
                         Text(
                             text = "Be Sure we don't collect your data, You can check code on github",
                             style = MaterialTheme.typography.bodySmall,
-                            color = MaterialTheme.colorScheme.onBackground
+                            color = MaterialTheme.colorScheme.onBackground,
+                            modifier = Modifier.padding(if (screenInfo.type == ScreenType.DESKTOP) 16.dp else 8.dp)
                         )
                     }
                 }

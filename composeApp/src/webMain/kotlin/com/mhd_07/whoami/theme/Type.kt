@@ -34,14 +34,14 @@ sealed class FontSize {
     abstract val display: TextUnit
 
     data object Desktop : FontSize() {
-        override val titleLarge = 40.sp
-        override val titleSmall = 20.sp
-        override val description = 18.sp
-        override val display = 24.sp
+        override val titleLarge = 96.sp
+        override val titleSmall = 56.sp
+        override val description = 24.sp
+        override val display = 48.sp
     }
 
     object Mobile : FontSize() {
-        override val titleLarge = 24.sp
+        override val titleLarge = 40.sp
         override val description = 16.sp
         override val titleSmall = 18.sp
         override val display = 20.sp
@@ -50,7 +50,7 @@ sealed class FontSize {
 
 @Composable
 fun whoamiType(): Typography {
-    val screenInfo = rememberScreenType()
+    val screenInfo = rememberScreenInfo()
     val fontSizes by remember {
         derivedStateOf {
             when (screenInfo.value.type) {
@@ -90,7 +90,7 @@ data class ScreenInfo(
 )
 
 @Composable
-expect fun rememberScreenType(): State<ScreenInfo>
+expect fun rememberScreenInfo(): State<ScreenInfo>
 
 enum class ScreenType {
     DESKTOP,

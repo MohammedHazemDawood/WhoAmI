@@ -9,7 +9,7 @@ import kotlinx.browser.window
 import org.w3c.dom.events.Event
 
 @Composable
-actual fun rememberScreenType(): State<ScreenInfo> {
+actual fun rememberScreenInfo(): State<ScreenInfo> {
     val screenInfo = remember { mutableStateOf(calculateScreenInfo()) }
 
     DisposableEffect(Unit) {

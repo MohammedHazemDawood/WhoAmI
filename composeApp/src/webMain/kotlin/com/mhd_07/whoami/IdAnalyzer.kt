@@ -33,7 +33,7 @@ class IdAnalyzer() {
         return if (id.length == 14 && id.all { it.isDigit() } && (X == '2' || X == '3') && DD.toInt() in 1..31 && MM.toInt() in 1..12 && YY.toInt() in 0..99)
             Result.Success(
                 IdData(
-                    gender = getGender(X),
+                    gender = getGender(G),
                     birthPlace = getBirthPlace(SS) ?: Place.ALL.first(),
                     day = getDay(DD),
                     month = getMonth(MM),

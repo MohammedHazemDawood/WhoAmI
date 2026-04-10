@@ -30,6 +30,7 @@ import com.mhd_07.whoami.theme.ScreenType
 import com.mhd_07.whoami.theme.WhoAmITheme
 import com.mhd_07.whoami.theme.rememberScreenInfo
 import kotlinx.datetime.Month
+import androidx.compose.ui.graphics.SolidColor
 
 @Composable
 fun App() {
@@ -99,6 +100,7 @@ fun App() {
                                         color = MaterialTheme.colorScheme.onSurface,
                                         textAlign = TextAlign.Center
                                     ),
+                                    cursorBrush = SolidColor(MaterialTheme.colorScheme.primary),
                                     decorationBox = {
                                         Box(
                                             contentAlignment = Alignment.CenterStart,
